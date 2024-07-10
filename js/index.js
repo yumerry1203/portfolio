@@ -54,12 +54,32 @@ $(document).ready(function(){
     };
   });
 
+  /*  Web publishing */
+  let pubIdx = 0;
+  let pubOldIdx = 0;
+
+  function pubImg(pubIdx){
+    if(pubIdx!=pubOldIdx){
+      $('.thumbs li').eq(pubOldIdx).css({"opacity":0.5,"box-shadow":"none"}); 
+      $('.thumbs li').eq(pubIdx).css({"opacity":1,"box-shadow":"9px 9px 0px var(--brown)"}); 
+      $('.list>li').eq(pubOldIdx).css({"opacity":0}); 
+      $('.list>li').eq(pubIdx).css({"opacity":1}); 
+     /*  if(pubIdx === 1){
+        $(this).find(h3).css({"color":"#FF7C98"}); 
+      } */
+    };
+    pubOldIdx = pubIdx;
+  }
+
+  $('.thumbs li').click(function(){
+    pubIdx = $(this).index();
+    pubImg(pubIdx);
+  });
+
   /*  UI/UX Design Banner */
   let bannerWidth = $(".banner ul li").width() + 400;  
   $(".banner ul li:last").prependTo(".banner ul");
   $(".banner ul").css({left:-bannerWidth});
-
-
 
   $(".ban_btn .ban_left").click(function(){
     $(".banner ul").stop().animate({left:"+="+bannerWidth+"px"},500,function(){			

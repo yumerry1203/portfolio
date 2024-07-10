@@ -83,3 +83,10 @@ header{
 section{
   height: 100vh;
 }
+
+/* Button */
+.line_btn{
+  border: 3px solid var(--brown);
+  border-radius:15px;
+  text-align: center;
+}
