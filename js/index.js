@@ -47,15 +47,49 @@ $(document).ready(function(){
       }
       if ( page <= 0 ) { page = 0; }
       if ( page >= section_num-1 ) { page = section_num-1; }
+      console.log(page);
+
+      if (page >= 2){
+        $('header').stop().fadeIn(300);
+      }else{
+        $('header').stop().fadeOut(300);
+
+      }
       $("#dot span").eq(page).addClass("active");
 			$("#dot span").eq(page).siblings().removeClass("active");
       $("html,body").stop().animate({ scrollTop:wh*page },500); 
     };
   });
 
+  /* 스킬 애니메이션 */
+  draw(98, '.skill1', 'var(--blue)');
+  draw(85, '.skill2', 'var(--blue)');
+  draw(90, '.skill3', 'var(--blue)');
+  draw(98, '.skill4', 'var(--blue)');
+
+
+
+function draw(max, classname, colorname){
+   var i=1;
+    var func1 = setInterval(function(){
+      if(i<max){
+          color1(i,classname,colorname);
+          i++;
+      } else{
+        clearInterval(func1);
+      }
+    },10);
+}
+function color1(i, classname,colorname){
+   $(classname).css({
+        "background":"conic-gradient("+colorname+" 0% "+i+"%, rgba(255, 255, 255, 0) "+i+"% 100%)"
+   });
+  };
+
   /*  Web publishing */
   let pubIdx = 0;
   let pubOldIdx = 0;
+  const pubNum = $('.pub_content .list>li').length;
 
   function pubImg(pubIdx){
     if(pubIdx!=pubOldIdx){
@@ -69,6 +103,22 @@ $(document).ready(function(){
 
   $('.thumbs li').click(function(){
     pubIdx = $(this).index();
+    pubImg(pubIdx);
+  });
+
+  $(".thumbs .pre_btn").click(function(){
+    pubIdx--;
+    if(pubIdx<0){
+      pubIdx=pubNum-1;
+    }
+    pubImg(pubIdx);
+  });
+
+  $(".thumbs .next_btn").click(function(){
+    pubIdx++;
+    if(pubIdx>pubNum-1){
+      pubIdx=0;
+    }
     pubImg(pubIdx);
   });
 
