@@ -67,24 +67,22 @@ $(document).ready(function(){
   draw(90, '.skill3', 'var(--blue)');
   draw(98, '.skill4', 'var(--blue)');
 
-
-
-function draw(max, classname, colorname){
-   var i=1;
-    var func1 = setInterval(function(){
-      if(i<max){
-          color1(i,classname,colorname);
-          i++;
-      } else{
-        clearInterval(func1);
-      }
-    },10);
-}
-function color1(i, classname,colorname){
-   $(classname).css({
-        "background":"conic-gradient("+colorname+" 0% "+i+"%, rgba(255, 255, 255, 0) "+i+"% 100%)"
-   });
-  };
+  function draw(max, classname, colorname){
+    var i=1;
+      var func1 = setInterval(function(){
+        if(i<max){
+            color1(i,classname,colorname);
+            i++;
+        } else{
+          clearInterval(func1);
+        }
+      },10);
+  }
+  function color1(i, classname,colorname){
+    $(classname).css({
+          "background":"conic-gradient("+colorname+" 0% "+i+"%, rgba(255, 255, 255, 0) "+i+"% 100%)"
+    });
+    };
 
   /*  Web publishing */
   let pubIdx = 0;
@@ -207,5 +205,38 @@ function color1(i, classname,colorname){
   $('.ui_top_btn').click(function(){
     $(".ui_modal").stop().animate({ scrollTop:0},500); 
   })
+
+  /* 웹 기획 */
+  $('.file_list .item').click(function(){
+    const fileNum = $(this).index();
+    $(this).find('img').attr("src","image/file-open.png")
+    $(this).find('img').attr("src","image/file-open.png")
+    $('.planning_list li').removeClass('on');
+    $('.planning_list li').eq(fileNum).addClass('on');
+    $('.web_planning li').removeClass('open');
+    $('.web_planning li').eq(fileNum).addClass('open');
+    $('.web_planning li div').removeClass('fade');
+    $('.web_planning li.open div').first().addClass('fade');
+
+  })
+
+  $('.planning_list li a').click(function(){
+    const listNum = $(this).index();
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+    $('.web_planning li div').removeClass('fade');
+    $('.web_planning .open div').eq(listNum).addClass('fade');
+  });
+
+  /* web planning scroll */
+  $('.web_planning').mouseenter(function(){
+    wheel = false;
+  });
+  $('.web_planning').mouseleave(function(){
+    wheel = true;
+  })
+
+
+
 
 });

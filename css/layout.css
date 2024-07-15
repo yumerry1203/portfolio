@@ -196,7 +196,7 @@
   width: 350px;
   height: 450px;
   border-radius: 40% 40% 0 0;
-  border: 3px solid var(--brown);
+  /* border: 3px solid var(--brown); */
 }
 .id_picture img{
   position: absolute;
@@ -233,6 +233,9 @@
   flex-direction: column;
   margin-top:15px;
   gap:15px; 
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+
 }
 
 .skills p{
@@ -275,6 +278,7 @@ span.center{
 }
 .main_skills ul{
   display: flex;
+  align-items: start;
   justify-content: space-around;
 }
 .main_skills ul li{
@@ -617,7 +621,7 @@ span.center{
 #uiux h2{
   width: 1200px;
   margin:auto;
-  padding-top:70px;
+  padding-top:120px;
   text-align: center;
 }
 .banner_box{ 
@@ -950,6 +954,7 @@ span.center{
 }
 .file_list .item{
   text-align: center;
+  cursor: pointer;
 }
 .file_list .item span{
   display: block;
@@ -957,22 +962,21 @@ span.center{
 .web .content{
   overflow:hidden;
   width: 1000px;
-  height: 620px;
+  height: 650px;
   border:3px solid var(--brown);
   border-radius: 20px;
 }
-
 .web .content .top{
   position: relative;
   display: flex;
-  gap:7px;
+  gap:17px;
   align-items: center;
   height: 45px;
   padding-left:10px;
   border-bottom:3px solid var(--brown);
   background-color:var(--beige);
 }
-.top>span{
+.top .dot span{
   display: inline-block;
   width: 15px;
   height: 15px;
@@ -983,18 +987,70 @@ span.center{
 .top span:nth-child(3){background-color:#A6D4BE;}
 .top ul{
   display: flex;
+
 }
 .top ul li span{
   line-height: 45px;
 }
-.top p{
+.planning_list{
+  position: relative;
+  width: 800px;
+  height: 45px;
+}
+.planning_list li{
   position: absolute;
-  left:50%;
-  width: 300px;
-  height: 30px;
+  display: flex;
+  width: 100%;
+  gap:20px;
+  align-items: center;
+  height: 100%;
+  opacity: 0;
+}
+.planning_list li.on{
+  opacity: 1;
+  z-index: 555;
+}
+.planning_list li a{
+  width: 220px;
+  height: 80%;
+  padding-left:20px;
+  line-height: 35px;
+  border:3px solid var(--brown);
   border-radius:30px;
-  line-height: 30px;
-  text-align: center;
-  background-color: #e5e1de;
-  transform:translateX(-50%);
+}
+.planning_list li a.active{
+  border-radius: 10px 10px 0 0;
+  height: 88%;
+  background-color: var(--brown);
+  color: #fff;
+  margin-top: 8px;
+  font-size: 18px;
+}
+.web_planning{
+  position: relative;
+  height: 605px;
+}
+.web_planning li{
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+.web_planning li div{
+  position: absolute;
+  display: none;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  
+}
+.web_planning li.open{z-index:555;}
+.web_planning li.open div.fade{
+  display: block;
+  overflow-y: scroll;
+}
+.web_planning li.open div.fade img{
+  width: 100%;
 }
