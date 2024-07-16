@@ -953,9 +953,11 @@ span.center{
   row-gap:15px;
 }
 .file_list .item{
+  width: 140px;
   text-align: center;
   cursor: pointer;
 }
+
 .file_list .item span{
   display: block;
 }
@@ -975,6 +977,10 @@ span.center{
   padding-left:10px;
   border-bottom:3px solid var(--brown);
   background-color:var(--beige);
+}
+.top .dot{
+  display: flex;
+  gap: 10px;
 }
 .top .dot span{
   display: inline-block;

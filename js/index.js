@@ -209,15 +209,14 @@ $(document).ready(function(){
   /* 웹 기획 */
   $('.file_list .item').click(function(){
     const fileNum = $(this).index();
-    $(this).find('img').attr("src","image/file-open.png")
-    $(this).find('img').attr("src","image/file-open.png")
+    $(this).siblings().find('img').attr("src","image/file.png");
+    $(this).find('img').attr("src","image/file-open.png");
     $('.planning_list li').removeClass('on');
     $('.planning_list li').eq(fileNum).addClass('on');
     $('.web_planning li').removeClass('open');
     $('.web_planning li').eq(fileNum).addClass('open');
     $('.web_planning li div').removeClass('fade');
     $('.web_planning li.open div').first().addClass('fade');
-
   })
 
   $('.planning_list li a').click(function(){
@@ -235,8 +234,4 @@ $(document).ready(function(){
   $('.web_planning').mouseleave(function(){
     wheel = true;
   })
-
-
-
-
 });
