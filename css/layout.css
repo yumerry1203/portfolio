@@ -154,10 +154,16 @@
   color:crimson;
   padding:10px;
 }
-.career h3{ background-color: var(--green);}
-.career span{
-  font-weight: bold;
-  color:#5f9c7f;
+.skill{
+  display: flex;
+  flex-direction: column;
+  gap:20px;
+  padding: 50px 30px 20px;
+}
+.skill h3{ background-color: var(--green);}
+.skill span:last-child{
+  position: absolute;
+  top:105%;
 }
 .not-flex p{
   display:inline-block;
@@ -228,78 +234,53 @@
 .personal_info ul li{
   font-size:18px;
 }
-.skills{
-  display: flex;
-  flex-direction: column;
-  margin-top:15px;
-  gap:15px; 
+.career{
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 30px;
-
-}
-
-.skills p{
-  text-align: center;
-/*   width: 150px;
-  height: 30px;
-  border-radius:20px;
-  background-color:var(--pink); */
-  font-family:sebang_B, sans-serif;
-  font-size: 22px;
-  margin:15px 0;
 }
 .skill_item {
+  display:flex;
+  gap:13px;
+}
+.skill_item span:first-child{
+  display: inline-block;
+  flex:2;
+}
+.skill_item span:last-child{
+  display: inline-block;
+  flex:1;
+}
+.skill_item .bar{
+  flex:5;
   position: relative;
-  display:inline-block;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  transition: 0.3s;
+  width: 100%;
+  height: 12px;
+  background-color: #6697ff;
+  border-radius: 20px;
+  overflow: hidden;
 }
-.main_skills ul li:nth-of-type(3) .center, .main_skills ul li:nth-of-type(4) .center{
-  background-color:var(--yellow);
-}
-span.center{
-  background: #fff;
-  display : block;
+.skill_item .bar:before{
+  content:'';
   position: absolute;
-  top:50%; left:50%;
-  width:60px; height:60px;
-  border-radius: 50%;
-  text-align:center; 
-  line-height: 65px;
-  font-size:20px;
-  transform: translate(-50%, -50%);
+  top:0;
+  left:0;
+  width: 50%;
+  height: 100%;
+  background-color: #c1d5ff;
 }
-.main_skills{
-  width:100%;
-/*   height: 100px;
-  border: 3px solid var(--brown); */
-}
-.main_skills ul{
-  display: flex;
-  align-items: start;
-  justify-content: space-around;
-}
-.main_skills ul li{
+.main_skill{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 10px;
+  gap:5px;
+  margin-top:20px;
 }
 .sub_skills{
-  width:100%;
-  /* height: 50px; */
- /*  border: 3px solid var(--brown); */
-}
-.sub_skills ul{
   display: flex;
+  gap:20px;
   justify-content: center;
-  column-gap: 35px;
 }
-.sub_skills ul li img{
-  width:55px;
+.sub_skills img{
+  width: 50px;
   box-shadow: 0 0 7px rgba(0,0,0,0.5);
   border-radius:15px;
 }
@@ -397,7 +378,6 @@ span.center{
   display: flex;
   gap:20px;
 }
-
 .pub_detail .btn_wrap .line_btn{
   flex:1;
   height: 50px;
@@ -406,8 +386,6 @@ span.center{
   font-family:sebang_B, sans-serif;
   line-height: 47px;
 }
-
-
 .pub_mock{
   flex:1;
   position: relative;
@@ -475,9 +453,6 @@ span.center{
   from{top:0;}
   to{top:-885px;}
 }
-
-
-
 .mirae .pub_mock img{
   position: absolute;
   top:36px;
@@ -1059,4 +1034,89 @@ span.center{
 }
 .web_planning li.open div.fade img{
   width: 100%;
+}
+
+
+/* career */
+/* .career_list{
+  display: flex;
+  flex-direction: column;
+} */
+#career h2{margin-top:60px;}
+.career_list{
+  margin-top:45px;
+}
+.career_list li{
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 1000px;
+  height: 100px;
+  margin:auto;
+  border-bottom: 3px solid #ede8db;
+}
+.career_list li:hover{
+  transform: scale(1.2);
+  transition:0.3s;
+  background-color:#FF9202;
+  color:#fff;
+  border-bottom:none;
+  box-shadow: 0 0 7px rgba(0,0,0,0.5);
+}
+.career_list li:hover .career_right{
+  opacity: 0;
+}
+.career_list li:hover a{
+  animation: arrow-ani 0.5s;
+  animation-fill-mode:forwards;
+  color:var(--brown);
+}
+.career_list li .career_logo{
+  width: 110px;
+}
+.career_list li .career_logo img{
+  width: 100%;
+}
+.career_list li:last-child img{
+  width: 80%;
+}
+.career_list li p{
+  width: 650px;
+  padding-left:60px;
+  font-family:sebang_B, sans-serif;
+  font-size:22px;
+}
+.career_list li .career_right{
+  display: flex;
+  gap:5px;
+  text-align: right;
+  flex-direction: column;
+}
+.career_year{
+  font-family:sebang_B, sans-serif;
+  color:#6697ff;
+  font-size:18px;
+}
+.career_company{
+  font-size: 14px;
+}
+.career_list li a{
+  position: absolute;
+  top:50%;
+  right:-200px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap:20px;
+}
+.career_list li a span{
+  font-size: 30px;
+  height: 40px;
+  font-weight: bold;
+}
+
+@keyframes arrow-ani{
+  100%{right:30px;}
 }

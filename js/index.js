@@ -62,7 +62,7 @@ $(document).ready(function(){
   });
 
   /* 스킬 애니메이션 */
-  draw(98, '.skill1', 'var(--blue)');
+/*   draw(98, '.skill1', 'var(--blue)');
   draw(85, '.skill2', 'var(--blue)');
   draw(90, '.skill3', 'var(--blue)');
   draw(98, '.skill4', 'var(--blue)');
@@ -83,7 +83,7 @@ $(document).ready(function(){
           "background":"conic-gradient("+colorname+" 0% "+i+"%, rgba(255, 255, 255, 0) "+i+"% 100%)"
     });
     };
-
+ */
   /*  Web publishing */
   let pubIdx = 0;
   let pubOldIdx = 0;
