@@ -36,8 +36,13 @@ font-family:sebang_B, sans-serif;
   font-family:sebang_B;
   src:url(../font/SEBANG\ Gothic\ Bold.woff) format('woff');
 }
-
-
+/* <SansitaOne> 
+  font-family : SansitaOne, serif;
+*/
+@font-face{
+  font-family:SansitaOne;
+  src:url(../font/SansitaOne.woff) format('woff');
+}
 /* 
 <라인체>
 font-family: Line_L, sans-serif;
@@ -56,4 +61,13 @@ font-family: Line_B, sans-serif;
 @font-face {
   font-family: Line_B;
   src: url(../font/LINESeedKR-Bd.woff) format('woff');
+}
+
+
+
+@font-face {
+  font-family: 'RixYeoljeongdo_Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/RixYeoljeongdo_Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }

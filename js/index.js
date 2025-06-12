@@ -40,6 +40,7 @@ $(document).ready(function(){
   $(".area").on("mousewheel DOMMouseScroll",function(e,delta) {
     if (wheel) {
       let n = $(this).index();
+      console.log(delta);
       if(delta < 0) { 
         page = n+1;
       }else{ 
@@ -47,7 +48,6 @@ $(document).ready(function(){
       }
       if ( page <= 0 ) { page = 0; }
       if ( page >= section_num-1 ) { page = section_num-1; }
-      console.log(page);
 
       if (page >= 2){
         $('header').stop().fadeIn(300);
@@ -55,35 +55,19 @@ $(document).ready(function(){
         $('header').stop().fadeOut(300);
 
       }
+      if(page === 3){
+        $(".airseoul .pub_mock img:nth-child(1)").animate({left:18,top:150},1000)
+        $(".airseoul .pub_mock img:nth-child(2)").animate({left:100,top:247},1000)
+        $(".airseoul .pub_mock img:nth-child(3)").animate({left:438,top:150},1000)
+        $(".airseoul .pub_mock img:nth-child(4)").animate({left:362,top:247},1000)
+      }
+
       $("#dot span").eq(page).addClass("active");
 			$("#dot span").eq(page).siblings().removeClass("active");
       $("html,body").stop().animate({ scrollTop:wh*page },500); 
     };
   });
 
-  /* 스킬 애니메이션 */
-/*   draw(98, '.skill1', 'var(--blue)');
-  draw(85, '.skill2', 'var(--blue)');
-  draw(90, '.skill3', 'var(--blue)');
-  draw(98, '.skill4', 'var(--blue)');
-
-  function draw(max, classname, colorname){
-    var i=1;
-      var func1 = setInterval(function(){
-        if(i<max){
-            color1(i,classname,colorname);
-            i++;
-        } else{
-          clearInterval(func1);
-        }
-      },10);
-  }
-  function color1(i, classname,colorname){
-    $(classname).css({
-          "background":"conic-gradient("+colorname+" 0% "+i+"%, rgba(255, 255, 255, 0) "+i+"% 100%)"
-    });
-    };
- */
   /*  Web publishing */
   let pubIdx = 0;
   let pubOldIdx = 0;
@@ -103,6 +87,21 @@ $(document).ready(function(){
     pubIdx = $(this).index();
     pubImg(pubIdx);
   });
+  $('.thumbs ul li:nth-child(2)').click(function(){
+    $(".dis img").animate({
+      top:-885},2000);
+  })
+  $('.thumbs ul li:nth-child(3)').click(function(){
+    $(".mirae .pub_mock img:nth-child(1)").animate({left:200},300)
+    $(".mirae .pub_mock img:nth-child(2)").animate({left:300},300)
+    $(".mirae .pub_mock img:nth-child(3)").animate({left:400},300)
+  })
+  $('.thumbs ul li:nth-child(1)').click(function(){
+    $(".airseoul .pub_mock img:nth-child(1)").animate({left:18,top:150},300)
+    $(".airseoul .pub_mock img:nth-child(2)").animate({left:100,top:247},300)
+    $(".airseoul .pub_mock img:nth-child(3)").animate({left:438,top:150},300)
+    $(".airseoul .pub_mock img:nth-child(4)").animate({left:362,top:247},300)
+  })
 
   $(".thumbs .pre_btn").click(function(){
     pubIdx--;
@@ -118,6 +117,18 @@ $(document).ready(function(){
       pubIdx=0;
     }
     pubImg(pubIdx);
+  });
+
+  $(".mo_mockup").click(function(){
+    $(this).siblings('.pop').show(); 
+    wheel = false;
+    $('header').hide();
+  });
+
+  $(".pop .close").click(function(){
+    $(".pop").hide(); 
+    wheel = true;
+    $('header').show();
   });
 
   /*  UI/UX Design Banner */
@@ -171,8 +182,10 @@ $(document).ready(function(){
       modal_index = $(this).index();
       $(".modal_page span:nth-child(1)").text(modal_index+1);
       $("html").css({"overflow-y":"hidden"}); 
+      $(".modal-content>li").fadeOut();
       $(".modal-content>li").eq(modal_index).fadeIn(); 
       $(".modal").stop().fadeIn(); 
+      $(".modal").scrollTop(0);
   });
 
   $(".pre").click(function(){
@@ -181,6 +194,8 @@ $(document).ready(function(){
       modal_index--;
       $(".modal_page span:nth-child(1)").text(modal_index+1);
       $(".modal-content>li").eq(modal_index).stop().fadeIn();
+      $(".modal").scrollTop(0);
+
     };
   });
 
@@ -190,13 +205,16 @@ $(document).ready(function(){
       modal_index++;
       $(".modal_page span:nth-child(1)").text(modal_index+1);
       $(".modal-content>li").eq(modal_index).stop().fadeIn();
+      $(".modal").scrollTop(0);
+
     };
   });
 
   $(".modal-close").click(function(){
-    $("html").css({"overflow-y":"scroll"});
     $(".modal").stop().fadeOut();
     wheel = true;
+    $(".modal").scrollTop(0);
+
   });
 
   $('.top_btn').click(function(){
@@ -234,4 +252,24 @@ $(document).ready(function(){
   $('.web_planning').mouseleave(function(){
     wheel = true;
   })
+
+
+
 });
+
+
+const tl = gsap.timeline({defaults:{opacity:0,ease:'back'}});
+
+function init(){
+   tl.from('#intro .contents span',{ease:'linear',autoAlpha:0}) 
+     .from('#intro .contents h1',{x:-50})
+    .from('#intro .contents p',{x:50},'<')
+    .from('.ver',{y:50},'-=0.2')
+    .from('.deco > *',{scale:0, stagger:0.1},'-=0.5'); 
+  
+ };
+
+
+ window.addEventListener('DOMContentLoaded', () => {
+ init();
+ });
