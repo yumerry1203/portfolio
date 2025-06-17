@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>AIRSEOUL</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!--Quick menu  -->
+  <div class="quick_menu">
+    <a href="login.html"><span class="quick_icon material-symbols-outlined">login</span><p>로그인</p></a>
+    <a href="signup.html"><span class="quick_icon material-symbols-outlined">person</span><p>회원가입</p></a>
+    <a href="#"><span class="quick_icon material-symbols-outlined">arrow_upward</span><p>TOP</p></a>
+  </div>
+
+  <div id="wrap">
+    <header class="active">
+      <div class="inner">
+        <h1 class="logo"><a href="index.html"></a></h1>       
+        <nav>
+          <ul class="gnb">
+            <li><a href="reservation.html">예약조회/변경</a></li>
+            <li>
+              <a href="info.html">운임안내</a>
+              <ul class="sub_menu">
+                <li><a href="info.html">운임안내</a></li>
+                <li><a href="info1.html">수수료</a></li>
+                <li><a href="info2.html">항공권안내</a></li>
+              </ul>
+            </li>
+            <li><a href="notice.html">공지사항</a></li>
+            <li><a href="partner.html">제휴</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main> 
+      <div class="visual_txt">
+        <h3>에어서울을 타는 순간, 당신의 휴가는 시작된다.</h3>
+        <h2>여행의 시작 <strong>AIR SEOUL!</strong></h2>
+      </div>
+      <div class="reser">
+        <div class="tit">항공권 예약 <b>ticket reservation</b></div>
+        <div class="logo_txt">AIR SEOUL</div>
+        <div class="form_wrap">
+          <div class="way">
+            <a href="#none" class="active">왕복</a>
+            <a href="#none">편도</a>
+          </div>
+          <form>
+            <div>
+              <span>출발지</span>
+              <select name="departure" id="dep">
+                <option value="">출발지 선택 ------</option>
+                <option value="icn">서울/인천 &nbsp; ICN</option>
+                <option value="gmp">서울/김포 &nbsp; GMP</option>
+                <option value="cju">제주 &nbsp; CJU</option>
+                <option value="nrt">도쿄/나리타 &nbsp; NRT</option>
+                <option value="fuk">후쿠오카 &nbsp; FUK</option>
+                <option value="dad">다낭 &nbsp; DAD</option>
+              </select>
+            </div>
+            <div>
+              <span>도착지</span>
+              <select name="destination" id="des">
+                <option value="">도착지 선택 ------</option>
+                <option value="kix">오사카/간사이 &nbsp; KIX</option>
+                <option value="tak">다카마쓰 &nbsp; TAK</option>
+                <option value="cxr">나트랑 &nbsp; CXR</option>
+                <option value="klo">보라카이 &nbsp; KLO</option>
+                <option value="ygj">돗토리/요나고 &nbsp; YGJ</option>
+                <option value="dyg">장자제&nbsp; DYG</option>
+              </select>
+            </div>
+            <div class="start_date">
+              <span>탑승일</span>
+              <input type="date" data-placeholder="탑승일">
+            </div>
+          </form>
+        </div>
+        <div class="journey">
+          <div class="journey_result"><span id="result_dep"></span><span class="airplane material-symbols-outlined">
+            flight
+            </span><span id="result_des"></span></div>
+          <a href="#none" class="btn_big sub_btn" id="inquiry">조회</a>
+        </div>
+      </div>
+    </main>
+    <!-- 조회 결과 -->
+    <section id="main_result">
+      <div class="inner">
+        <h6>조회 결과</h6>
+        <table>
+          <thead>
+            <tr>
+              <th>편명</th>
+              <th>출발시간</th>
+              <th></th>
+              <th>도착시간</th>
+              <th>특가운임</th>
+              <th>할인운임</th>
+              <th>정상운임</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RS527</td>
+              <td>19:50</td>
+              <td>(5시간5분)</td>
+              <td>22:55</td>
+              <td>                
+                <label>
+                  <input type="radio" name="air" value="va01">
+                  <em></em><span>100,000원</span>
+                </label>
+              </td>
+              <td>
+                <label>
+                  <input type="radio" name="air" value="va02">
+                  <em></em><span>200,000원</span>
+                </label>
+              </td>
+              <td>
+                <label>
+                  <input type="radio" name="air" value="va03">
+                  <em></em><span>380,000원</span>
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <td>RS530</td>
+              <td>02:00</td>
+              <td>(5시간5분)</td>
+              <td>09:05</td>
+              <td>
+                <label>
+                  <input type="radio" name="air" value="va04">
+                  <em></em><span>90,000원</span>
+                </label>
+              </td>
+              <td>
+                예약마감
+              </td>
+              <td>
+                <label>
+                  <input type="radio" name="air" value="va05">
+                  <em></em><span>275,000원</span>
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="#none" class="btn_small">예매하기</a>
+      </div>
+    </section>
+    <!-- 여행지 추천 -->
+    <section id="recomm">
+      <div class="inner">
+        <h4>에어서울이 추천하는 여행지</h4>
+        <div class="banner"> 
+          <div class="ban">
+            <ul>
+              <li>
+                <a href="#none">
+                  <div class="img_box"><img src="img/recom01.jpg" alt="방콕이미지"></div>
+                  <div class="txt_wrap">
+                    <div class="country" data-date="2024.06.05 ~ 2024.06.19">
+                      <span>인천</span>
+                      <span class="arrow material-symbols-outlined">trending_flat</span>
+                      <span>방콕</span>
+                    </div>
+                    <span class="total">편도총액</span>
+                    <div class="price">139,000<strong>KRW~</strong></div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#none">
+                  <div class="img_box"><img src="img/recom02.jpg" alt="싱가포르이미지"></div>
+                  <div class="txt_wrap">
+                    <div class="country" data-date="2024.06.08 ~ 2024.07.03">
+                      <span>부산</span>
+                      <span class="arrow material-symbols-outlined">trending_flat</span>
+                      <span>싱가포르</span>
+                    </div>
+                    <span class="total">편도총액</span>
+                    <div class="price">127,900<strong>KRW~</strong></div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#none">
+                  <div class="img_box"><img src="img/recom03.jpg" alt="시즈오카이미지"></div>
+                  <div class="txt_wrap">
+                    <div class="country" data-date="2024.07.12 ~ 2024.07.25">
+                      <span>인천</span>
+                      <span class="arrow material-symbols-outlined">trending_flat</span>
+                      <span>시즈오카</span>
+                    </div>
+                    <span class="total">편도총액</span>
+                    <div class="price">139,000<strong>KRW~</strong></div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#none">
+                  <div class="img_box"><img src="img/recom04.jpg" alt="이스탄불이미지"></div>
+                  <div class="txt_wrap">
+                    <div class="country" data-date="2024.06.30 ~ 2024.07.28">
+                      <span>인천</span>
+                      <span class="arrow material-symbols-outlined">trending_flat</span>
+                      <span>이스탄불</span>
+                    </div>
+                    <span class="total">편도총액</span>
+                    <div class="price">259,000<strong>KRW~</strong></div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#none">
+                  <div class="img_box"><img src="img/recom05.jpg" alt="울란바타르이미지"></div>
+                  <div class="txt_wrap">
+                    <div class="country" data-date="2024.07.25 ~ 2024.08.10">
+                      <span>김포</span>
+                      <span class="arrow material-symbols-outlined">trending_flat</span>
+                      <span>울란바타르</span>
+                    </div>
+                    <span class="total">편도총액</span>
+                    <div class="price">139,000<strong>KRW~</strong></div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#none">
+                  <div class="img_box"><img src="img/recom06.png" alt="괌이미지"></div>
+                  <div class="txt_wrap">
+                    <div class="country" data-date="2024.07.21 ~ 2024.07.30">
+                      <span>부산</span>
+                      <span class="arrow material-symbols-outlined">trending_flat</span>
+                      <span>괌</span>
+                    </div>
+                    <span class="total">편도총액</span>
+                    <div class="price">199,000<strong>KRW~</strong></div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#none">
+                <div class="img_box"><img src="img/recom07.jpg" alt="보홀이미지"></div>
+                <div class="txt_wrap">
+                  <div class="country" data-date="2024.06.21 ~ 2024.07.12">
+                    <span>인천</span>
+                    <span class="arrow material-symbols-outlined">trending_flat</span>
+                    <span>보홀</span>
+                  </div>
+                  <span class="total">편도총액</span>
+                  <div class="price">99,000<strong>KRW~</strong></div>
+                </div>
+              </a>
+            </li>                   
+            </ul>
+          </div>
+          
+          <div class="ban_btn">
+            <a class="ban_left" href="#none"><i class="fa-solid fa-chevron-left"></i></a>
+            <a class="ban_right" href="#none"><i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    <!-- 공지사항 -->
+    <section id="main_notice">
+      <div class="inner">
+        <div class="tit_wrap">
+          <h4>공지사항</h4>
+          <a href="notice.html" class="full_view">전체보기 ></a>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>제목</th>
+              <th>등록일</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>중요</td>
+              <td><a href="notice.html">미사용 항공권 환불 관련안내</a></td>
+              <td>2024.05.12</td>
+            </tr>
+            <tr>
+              <td>중요</td>
+              <td><a href="notice.html">‘24년 국제선 민트패스 안내사항</a></td>
+              <td>2024.02.06</td>
+            </tr>
+            <tr>
+              <td>중요</td>
+              <td><a href="notice.html">항공기 안전정비로 인한 김포-제주 항공편 결항 안내</a></td>
+              <td>2024.05.09</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    
+    <footer>
+      <div class="inner">
+        <div class="address_box">
+          <img src="img/logo_white.png" alt="에어서울 로고">
+          <address>에어서울 주식회사 대표이사 선완성<br>
+            사업장 소재지 : (우)22382 인천광역시 중구 공항로 272 운서동<br>
+            국내선, 국제선 예약문의 1800-8100 (09:00~18:00)해외에서 이용 시 +82-1800-8100<br>
+            사업자 등록 번호 : 825-81-00091 사업자정보확인통신판매업 신고번호 제 2016-인천중구-0199
+          </address>
+          <p>ⓒ AIR SEOUL, Inc. All Rights Reserved.</p>
+        </div>  
+        <div class="group_com">
+          <a href="#none">그룹사 바로가기</a>
+          <div class="group_link">
+            <a href="https://flyasiana.com/C/KR/KO/index" target="_blank">아시아나항공</a>
+            <a href="https://www.asianaidt.com/" target="_blank">아시아나IDT</a>
+            <a href="https://www.airbusan.com/" target="_blank">에어부산</a>
+            <a href="http://www.asianaairport.com/kr/" target="_blank">아시아나에어포트</a>
+            <a href="https://www.asianasabre.co.kr/" target="_blank">아시아나세이버</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- script source -->
+  <script src="js/jquery-3.7.0.min.js"></script>
+  <script src="js/jquery-migrate-1.4.1.min.js"></script>
+  <script src="js/common.js"></script>
+
+</body>
+</html>

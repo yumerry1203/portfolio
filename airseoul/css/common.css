@@ -1,0 +1,110 @@
+/* 전체 공통 */
+header, section, footer{width:inherit;} 
+html{scroll-behavior: smooth;}
+body{font-family: 'Noto Sans KR', sans-serif;color:#333;}
+#wrap{width:100%;min-height:100%;position:relative;padding-bottom:215px;}
+.inner{width:1300px; margin:auto;display:flex;}
+
+/* 공통- 선line */
+.dash_line{width:90%;height: 1px;background-color:transparent;border-bottom:5px dashed #eee;margin:30px auto;}
+.tit_line{width: 100%;height: 7px;background-color:#23c6a9;margin:30px 0;}
+
+/* 공통- 텍스트 */
+h2{font-family: GmS_L, sans-serif;font-size:38px;}
+h3{font-family: GmS_B, sans-serif;font-size:36px;}
+h4{font-family: GmS_B, sans-serif;font-size:30px;}
+h5{font-family: GmS_B, sans-serif;font-size:26px;}
+h6{font-family: GmS_B, sans-serif;font-size:20px;}
+.txt_mint{color:#23c6a9;}
+.txt_l{text-align: left;}
+.txt_r{text-align: right;}
+.txt_c{text-align: center;}
+
+/* 공통-list */
+.note{padding:15px 0;}
+.note li{position:relative;list-style-position: inside;padding-left:20px;line-height: 1.6;}
+.note li:before{content: '-'; position:absolute;right:99%;}
+
+/* 공통-버튼 */
+button{font-family: 'Noto Sans KR', sans-serif;}
+.btn_big{display:block;width:280px; height: 55px;color:#fff;background-color:#23c6a9;text-align: center;line-height: 55px;border-radius: 25px;font-size:24px;font-family: GmS_M, sans-serif;border:none;}
+.btn_big:hover{font-weight: bold;cursor: pointer;opacity:0.8;}
+.btn_small{width:100px; height:35px;margin-left:5px;line-height: 32px;border:2px solid #23c6a9;text-align:center;color:#23c6a9;background-color:#fff;border-radius:15px;font-weight: bold;transition: 0.3s;}
+.btn_small:hover{background-color:#23c6a9;color:#fff;cursor: pointer;}
+.btn_gray{color:#333;background-color:#a8a8a8;}
+.sub_btn{margin:30px auto;transition: 0.3s;}
+.sub_btn:hover{background-color:#e0faf5;color:#23c6a9;border:2px solid #23c6a9;}
+.btn_line{color:#23c6a9;background-color:#fff;border:2px solid #23c6a9;}
+/* 공통-테이블 */
+table{border-collapse:collapse;border-spacing:0;width:1000px;margin: 20px auto;}
+th, tr, td{border:1px solid #eee;height:60px;padding:10px 30px;}
+th{background-color:#cef0e9;}
+tr:first-child{border-top:1px solid #eee;}
+caption{font-family: GmS_M, sans-serif; font-size:20px;padding:10px 0;text-align: left;}
+
+/* 공통-form */
+form{width: 1000px;margin: auto;}
+form div>span{display:inline-block;width:120px;font-weight: bold;}
+form fieldset{padding:20px 50px; border:none;display: flex;
+  flex-direction: column;}
+form fieldset>div{display:flex;margin-bottom:25px;align-items: center;padding-left: 30px;}
+form fieldset>div:last-child{margin-bottom:0;}
+form h6{margin:30px 0;}
+select{font-family: "Noto Sans", sans-serif;width:200px;border:1px solid #c0c0c0;padding:10px;background-color: #fff;margin-left:5px;color:#333;outline: none;border-radius:15px;}
+textarea{font-family: "Noto Sans", sans-serif;width:500px;height: 200px;padding:20px;border-radius:15px; outline: none;border: 1px solid #c0c0c0;}
+input[type="text"], input[type="search"], input[type="tel"], input[type="password"],input[type="date"]{width:250px;padding:10px;outline:none;border:1px solid transparent;background-color:#eee;border-radius:15px;}
+input:focus, textarea:focus{border:1px solid #23c6a9;}
+input:focus::placeholder{opacity: 0;}
+input[name="firstname"]{margin-left:5px;}
+
+/* 퀵메뉴 */
+.quick_menu{position:fixed;display:flex;flex-direction:column;justify-content:space-around;bottom:15%; right:5%;width: 70px;height: 230px;background-color:#fff;border-radius:35px;box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);z-index: 10;padding: 10px 0;}
+.quick_menu:after{content:'QUICK';position:absolute;bottom:102%;font-family: GmS_B, sans-serif;width:70px; text-align: center;}
+.quick_icon{color:#23c6a9;display: block;font-size:33px;transition:0.3s;}
+.quick_menu a{text-align: center;font-size: 14px;font-weight: bold;}
+.quick_menu a:hover .quick_icon{color:#666;}
+.quick_menu p{padding: 5px 0;}
+
+/* 라디오, 체크박스 스타일 */
+input[type=radio], input[type=checkbox]{display:none;} 
+input[type=radio]+em, input[type=checkbox]+em{display: inline-block;width: 24px;height: 24px;position:relative;}
+input[type=radio]+em:before, input[type=checkbox]+em:before{content: '\e836';font-family: 'Material Symbols Outlined';position:absolute;font-style: normal;top:7px;font-size:20px;color:#23c6a9;}
+input[type=radio]:checked+em:before{content: '\e837';}
+input[type=checkbox]:checked+em:before{content: '\e834';}
+input[type=checkbox]+em:before{content: '\e835';}
+
+/* 비주얼 영역 */
+.visual{display:flex;justify-content:center;align-items:center;width:100%; height:200px;background-repeat: no-repeat;background-size:cover;background-position:center;color:#fff;}
+#reservation .visual, #reservation1 .visual{background-image: url(../img/visual01.jpg);}
+#info .visual, #info1 .visual, #info2 .visual{background-image: url(../img/visual05.jpg);}
+#notice .visual{background-image: url(../img/visual06.jpg);}
+#partner .visual{background-image: url(../img/visual11.jpg);}
+
+/* header --------------------------- */
+header{width:inherit;height:80px;background-color:#fff;box-shadow: 0 -2px 10px rgba(0,0,0,0.1);}
+header .inner{justify-content:space-between;align-items: center;}
+.logo a{display:block;width:150px;height: 20px;background: url(../img/logo_green.png)no-repeat top left;}
+.gnb{font-family: GmS_M, sans-serif;display:flex;height:80px;justify-content: space-between;align-items: center;column-gap: 100px;}
+.gnb li{position:relative;font-size:18px;}
+.gnb>li>a{position:relative;display: block; height: 80px;line-height: 80px;}
+.gnb>li>a:before{content: '';position: absolute;bottom: 20px;left: 50%;transform: translateX(-50%);width: 0;height: 4px;background-color: #23c6a9;transition: 0.5s;}
+.gnb>li>a:hover:before{width:100%}
+.sub_menu{display:none;position:absolute;top:100%;left:-50%;}
+.sub_menu li{width:140px;height: 50px;background-color:#e0faf5;}
+.sub_menu li:hover{background-color:#cef3ec;font-weight: bold;}
+.sub_menu a{display:block;font-family: GmS_L, sans-serif;width:100%;height:100%;font-size:16px;text-align: center;line-height: 50px;}
+
+/* footer--------------------------- */
+footer{position:absolute;bottom:0;background-color: #a9a9a9;font-size:14px;height: 215px;}
+footer .inner{padding:35px 0;justify-content: space-between;}
+.address_box{color:#666;}
+.address_box address{font-style:normal;padding:10px 0;line-height: 1.6;}
+.address_box p{color:#fff;font-size: 14px;}
+
+/*  footer - 그룹사 바로가기 */
+.group_com{position:relative;}
+.group_com a{display:block;width:150px;height: 40px;padding-left:15px;background-color:#fff;line-height: 40px;}
+.group_com>a:after{content:'\e5c7';font-family: 'Material Symbols Outlined';position:absolute;;right:10px;font-size:24px;}
+.group_link{display:none;position:absolute;bottom:100%;}
+.group_link a{background-color:#eee;}
+.group_link a:hover{background-color:#b3b3b3;color:#fff;}

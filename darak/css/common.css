@@ -1,0 +1,46 @@
+/* 전체 공통 */
+header, section, footer{width:inherit;} 
+html{scroll-behavior: smooth; font-size: 62.5%;}
+body{font-family: 'Pretendard-Regular', sans-serif; color:#333;}
+section{
+  position: relative;
+  z-index: 0;
+}
+img{width:100%;max-width: 100%;}
+.rel{
+  position: relative;
+  height: 100%;
+}
+
+.pc_only{display:none;}
+/* 공통- 선line */
+.line{width:100%;height:1rem;background-color: #CECECE;}
+.line2{width:100%;height:0.5rem;margin:2rem 0;background-color: #CECECE;}
+
+/* 공통- 텍스트 */
+h2{font-size:4.5rem;font-family: 'GeekbleMalang2WOFF2',sans-serif;font-weight:normal;color:#fff;text-align: center;line-height: 1.3;}
+h2 span{color:#FFEAB4;}
+h3{font-size:2.4rem;font-family: 'GeekbleMalang2WOFF2',sans-serif;font-weight:normal;text-align:center;}
+.tit_text{font-size:1.7rem;text-align: center;margin-top:1rem;letter-spacing: -0.1rem;}
+.text{font-size:1.5rem;}
+
+/* 공통-list */
+
+/* 공통-버튼 */
+.btn_line, .btn_white, .btn_black{display:block;width:12rem;height:3.6rem;border-radius: 2.5rem;font-size:1.6rem;text-align: center;line-height: 3.6rem;}
+.btn_line{border:0.1rem solid #fff;color:#fff;}
+.btn_white{background-color:#fff;color:#214AA0;}
+.btn_black{background-color:#333;color:#fff;}
+/* 공통-테이블 */
+
+/* 공통-form */
+
+/* 퀵메뉴 */
+
+/* 라디오, 체크박스 스타일 */
+
+/* 비주얼 영역 */
+
+/* header --------------------------- */
+
+/* footer--------------------------- */
