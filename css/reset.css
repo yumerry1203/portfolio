@@ -7,17 +7,12 @@
 
 body{
   font-family: Line_R, sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
  /*  background-color:var(--beige); */
   color:var(--brown);
 
 }
 
-
-html{
-  overflow-x:hidden;
-  overflow-y:hidden;
-}
 
 
 li{
